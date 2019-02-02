@@ -1,9 +1,10 @@
 import React from 'react';
+import Sidedrawer from './Navigation/Sidedrawer';
 
 
  const Layout = (props) => (
     <>
-    <div>Togglebar</div>
+    <Sidedrawer/>
     {props.children}
     </>
 )

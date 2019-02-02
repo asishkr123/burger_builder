@@ -8,6 +8,50 @@
   margin: 2% auto;
 }
 
+
+
+.NavigationItems{
+    margin : 0;
+    padding : 0;
+    list-style: none;
+    display : flex;
+    align-items: center;
+    height :  100%;
+
+}
+
+.NavigationItem{
+     margin : 0;
+     box-sizing: border-box;
+     display: flex;
+     height: 100%;
+     align-items: center;
+}
+.NavigationItem a {
+     color : white;
+     text-decoration: none;
+     height :  100%;
+     padding: 16px 10px;
+     border-bottom: 4px solid transparent;
+     box-sizing: border-box;
+     display : block;
+}
+
+.NavigationItem a:hover,
+.NavigationItem a:active,
+.NavigationItem a.active{
+     background-color: #8F5C2C;
+     border-bottom: 4px solid #40a4c8;
+     color : white
+
+
+}
+
+
+.Content{
+    margin-top : 4rem;
+}
+
 .BreadTop {
   height: 20%;
   width: 80%;
@@ -106,6 +150,21 @@
   border-radius: 20px;
 }
 
+.Logo{
+  background-color: white;
+  padding : 8px;
+  height : 80%;
+  box-sizing: border-box;
+  border-radius: 20%;
+
+
+}
+
+
+.Logo img {
+    height : 100%;
+}
+
 .Bacon {
   width: 80%;
   height: 3%;
@@ -123,6 +182,243 @@
   width :  100%;
   font-size: 1.2rem;
 }
+
+
+.buildControls{
+       width : 100%;
+       background-color: #CF82FE;
+       display : flex;
+       flex-flow : column;
+       align-items: center;
+       box-shadow: 0 2px 1px #ccc;
+       margin : auto;
+       padding : 10px 0
+}
+
+
+.BuildControl{
+  display : flex;
+  justify-content: space-between;
+  align-items: center;
+  margin : 0 auto;
+}
+.BuildControl button{
+  display : block;
+  font : inherit;
+  margin : 0 5px;
+  width : 80px;
+  border : 1px solid #AA6817;
+  cursor : pointer;
+  outline : none;
+}
+
+
+.BuildControl button:disabled {
+  background-color: #AC9980;
+  border: 1px solid #7E7365;
+  color: #ccc;
+  cursor: default;
+}
+
+.BuildControl button:hover:disabled {
+  background-color: #AC9980;
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.Label {
+  padding: 10px;
+  font-weight: bold;
+  width: 80px;
+}
+
+.BuildControl .Less {  
+  background-color: #D39952;
+  color: white;
+}
+
+.BuildControl .More {
+  background-color: #8F5E1E;
+  color: white;
+}
+
+.BuildControl .Less:hover, .BuildControl .Less:active {  
+  background-color: #DAA972;
+  color: white;
+}
+
+.BuildControl .More:hover,.BuildControl .More:active {
+  background-color: #99703F;
+  color: white;
+}
+
+
+.OrderButton {
+  background-color: #DAD735;
+  outline: none;
+  cursor: pointer;
+  border: 1px solid #966909;
+  color: #966909;
+  font-family: inherit;
+  font-size: 1.2em;
+  padding: 15px 30px;
+  box-shadow: 2px 2px 2px #966909;
+}
+
+.OrderButton:hover, .OrderButton:active {
+  background-color: #A0DB41;
+  border: 1px solid #966909;
+  color: #966909;
+}
+
+.OrderButton:disabled {
+  background-color: #C7C6C6;
+  cursor: not-allowed;
+  border: 1px solid #ccc;
+  color: #888888;
+}
+
+.OrderButton:not(:disabled) {
+  animation: enable 0.3s linear;
+}
+
+@keyframes enable {
+  0% {
+      transform: scale(1);
+  }
+  60% {
+      transform: scale(1.1);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+
+.Modal {
+  position: fixed;
+  z-index: 500;
+  background-color: white;
+  width: 70%;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 1px black;
+  padding: 16px;
+  left: 15%;
+  top: 30%;
+  box-sizing: border-box;
+  transition: all 0.3s ease-out;
+}
+
+.Backdrop{
+    width : 100%;
+    height : 100%;
+    z-index: 10;
+    position: fixed;
+    left : 0;
+    top : 0;
+    background: rgba(0,0,0, 0.5)
+} 
+
+
+
+.Button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  outline: none;
+  cursor: pointer;
+  font: inherit;
+  padding: 10px;
+  margin: 10px;
+  font-weight: bold;
+}
+
+.Button:first-of-type {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.Success {
+  color: #5C9210;
+}
+
+.Danger {
+  color: #944317;
+}
+
+.Toolbar{
+     height : 56px;
+     width :  100%;
+     position : fixed;
+     top : 0;
+     left : 0;
+     background-color: #703B09;
+     display : flex;
+     justify-content: space-between;
+     align-items: center;
+     padding : 0 20px;
+     box-sizing: border-box;
+     z-index: 5;
+}
+
+
+.Toolbar nav{
+       height : 100%;
+
+}
+
+
+
+.SideDrawer{
+    position: fixed;
+    width :  200px;
+    max-width : 70%;
+    height: 100%;
+    left : 0;
+    top : 0;
+    z-index : 200;
+    background: white;
+    padding: 32px 16px;
+    box-sizing: border-box;
+    transition: transform  0.3s ease-out;
+}
+
+
+
+
+
+
+
+@media(min-width : 500px){
+  .SideDrawer{
+      display: none;
+  }
+
+}
+
+
+.Open{
+   transform: translateX(0);
+}
+.Close{
+    transform: translateX(-100%);
+}
+
+
+@media (min-width: 600px) {
+  .Modal {
+      width: 500px;
+      left: calc(50% - 250px);
+  }
+}
+
+
+
+
+
+
+
+
+
 
 
 
